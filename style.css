@@ -1,0 +1,275 @@
+html {
+    
+}
+
+.game {
+    width: 600px;
+    height: 275px;
+    border: 1px solid black;
+    margin: auto;
+    background-image: url("background.png");
+}
+
+.inventory {
+    position: relative;
+    top: 0px;
+    width: 600px;
+    height: 160px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.money_title{
+    position: relative;
+    left: 40%;
+    top: 30%;
+    color: black;
+    font-size: large;
+}
+
+#buy_multiplier {
+    position: relative;
+    top: 35%;
+    left: 50px;
+    height: 45px;
+    width: 100px;
+}
+
+#fly {
+    position: relative;
+    top: 35%;
+    left: 100px;
+    height: 45px;
+    width: 100px;
+}
+
+.shop {
+    width: 600px;
+    height: 160px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+#dino {
+    width: 25px;
+    height: 50px;
+    background-size: 25px 50px;
+    position: relative;
+    top: 120px;
+    left: 30px;
+}
+
+.dead {
+    background-image: url("dino_dead.png");
+}
+
+.score {
+    position: relative;
+    top: 0px;
+    left: 450px;
+    font: bold 1em "Arial";
+}
+
+#end {
+    position: relative;
+    top: 0px;
+    left: 250px;
+    height: 0px;
+}
+
+.visible {
+    background-color: red;
+    color: red;
+}
+
+.invisible {
+    background-color: white;
+    color: white;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.grounded {
+    background-image: url("dino2.png");
+}
+
+.jump {
+    animation: jump 0.45s linear;
+    animation-fill-mode: forwards;
+}
+
+.jump.alive {
+    background-image: url("dino_jump.png");
+}
+
+.stop_move {
+    animation-play-state: paused;
+}
+
+.move.stop_move{
+    animation-play-state: paused;
+}
+.ground .roll.stop_move{
+    animation-play-state: paused;
+}
+
+
+@keyframes jump {
+    0% {
+        top: 120px;
+    }
+    20% {
+        top: 45px;
+    }
+    40% {
+        top: 30px;
+    }
+    50% {
+        top: 40px;
+    }
+    60% {
+        
+    }
+    80% {
+        
+    }
+    100% {
+        top: 120px;
+    }
+}
+
+.fly.alive {
+    animation: begin_fly 0.4s linear;
+    animation: fly 1s linear infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes begin_fly {
+    0%{
+        top: 120px;
+    }
+    100%{
+        top: 80px;
+    }
+}
+
+@keyframes fly{
+    0%{
+        top : 70px;
+        background-image: url("dino_fly1.png");
+    }
+    40%{
+        top: 10px;
+    }
+    50%{
+        top : 0px;
+    }
+    60%{
+        top: 10px;
+    }
+    100% {
+        top : 70px;
+        background-image: url("dino_fly2.png");
+    }
+}
+
+#cactus {
+    width: 20px;
+    height: 40px;
+    position: relative;
+    top: 80px;
+    left: 580px;
+    background-size: 20px 40px;
+}
+
+.static {
+    background: transparent;
+}
+
+.move {
+    background-image: url("cactus.png");
+    animation: block 1s linear;
+}
+
+@keyframes block {
+    0% {
+        left: 580px;
+    }
+    100% {
+        left: -20px;
+    }
+}
+
+.control {
+    width: 650px;
+    height: 50px;
+    margin: auto;
+}
+
+.button {
+    width: 600px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #e23124;
+    color: white;
+    border: none;
+    display: inline-block;
+    border-radius: 12px;
+}
+
+#start {
+    position: relative;
+    top: 0px;
+    left: 25px;
+}
+
+.ground {
+    width: 600px;
+    height: 20px;
+    margin: auto;
+    position: relative;
+    top: 180px;
+    overflow: hidden;
+}
+
+.ground>div {
+    height: 50px;
+    width: 1400px;
+    background: url("map.png");
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.ground .roll {
+    animation: ground 1.21s linear infinite;
+
+}
+
+@keyframes ground {
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes background_rolling {
+    0%{
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: -600px 0px;
+    }
+}
+
+.background_roll {
+    overflow: hidden;
+    animation: background_rolling 10s linear infinite;
+}
+.background_roll.stop_move{
+    animation-play-state: paused;
+}

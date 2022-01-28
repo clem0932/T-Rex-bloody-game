@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dino</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="main" class="game">
+        <div class="score">
+            <p>Score : <span id="string_score">0</span></p>
+        </div>
+        <div>
+            <h2 id="end" class="invisible">Game Over</h2>
+        </div>
+        <div class="ground">
+            <div id="ground_image"></div>
+        </div>
+        <div id="dino" class="grounded"></div>
+        <div id="cactus" class="static"></div>
+
+    </div>
+    <div class="inventory">
+        <p class="money_title">Money : <span id="str_money">0</span> $</p>
+    </div>
+    <div class="shop">
+        <button id="buy_multiplier" onclick="increase_multiplier()">Multiplier x<span id="multiplier_str">2</span><br>Price : <span id="multiplier_price_str">10</span> $</button>
+        <button id="fly" onclick="fly()">Fly butterfly !<br>100 $</button>
+        <!--<button id="debug" onclick="debug()">debug</button>-->
+    </div>
+
+    <script src="script.js"></script>
+
+    <div class="control">
+        <button id="start" class="button" onclick="start()">RUN</button>
+    </div>
+</body>
+
+</html>
